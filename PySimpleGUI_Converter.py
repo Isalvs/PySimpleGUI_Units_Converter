@@ -1,12 +1,11 @@
+# --- Begin of the pattern
+
+# Module import 
+
 import PySimpleGUI as sg
 
-'''
-    
-    Make a: simple converter km to m
-    input: Some value in Km
-    output: Converted value to meters 
-    
-'''
+
+# Creating the layout of the interface
 
 layout = [
     [sg.Text('Write above any value to be converted')],
@@ -18,7 +17,12 @@ layout = [
     [sg.Text('Output: ', key='-OUTPUT-')]
 ]
 
+# Create of the main window
+
 window = sg.Window('Converter', layout)
+
+
+# The loop for the entire window work
 
 while True:
 
@@ -26,6 +30,8 @@ while True:
 
     if event == sg.WIN_CLOSED:
         break
+
+# --- End of the Skeleton Pattern  ---
 
     if event == '-CONVERT-':
         input_value = values['-INPUT-']
@@ -55,4 +61,6 @@ while True:
         else:
             window['-OUTPUT-'].update('Output: Please enter a number')
 
+
+# Closing application after the loop's end
 window.close()
